@@ -65,7 +65,7 @@ class BroadcastServerFactory(websocket.WebSocketServerFactory):
 
    def tick(self):
       self.tickcount += 1
-      self.broadcast("'tick %d' from server" % self.tickcount)
+      #self.broadcast("'tick %d' from server" % self.tickcount)
       reactor.callLater(1, self.tick)
 
    def register(self, client):
@@ -96,8 +96,8 @@ def readSerialData(serial_input, factory):
     except ValueError, e:
       print e
     else:
-      # Broadcast json data for websocket.
-      factory.broadcast(obj)
+      # Broadcast json data as string for websocket.
+      factory.broadcast(json.dumps(obj))
 
 
 # Validate the serial data.
