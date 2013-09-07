@@ -137,7 +137,7 @@ def getArguments():
                                    'Set settings for running this script.')
   parser.add_argument('-s', '--serial_port_name',
                       default='/dev/ttyS0', #Arduino: '/dev/tty.usbmodemfa131',
-                      help='serial port (default: /dev/tty.usbmodemfa131)')
+                      help='serial port (default: /dev/ttyS0)')
   parser.add_argument('-b', '--baud_rate', type=int,
                       default=9600,
                       help='serial port\'s baud rate (default: 9600)')
